@@ -18,6 +18,10 @@ My research led me to the concept of cryptographic hashing using algorithms like
 
 I experimented with the Web Crypto API in JavaScript to understand how to produce a SHA-256 hash. For example, I wrote and tested a simple snippet in Visual Studio Code:
 
+
+
+
+
 async function sha256(password) {
 
 const encoder = new TextEncoder();
@@ -35,6 +39,11 @@ return Array.from(byteArray).map(b => b.toString(16).padStart(2, '0')).join('');
 const myPassword = "mypassword";
 
 sha256(myPassword).then(hash => console.log("Test hash:", hash));
+
+
+
+
+
 
 This confirmed that the Web Crypto API produced consistent, unique hash outputs and laid the groundwork for integrating secure password handling in my project.
 
