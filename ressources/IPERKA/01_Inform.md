@@ -1,6 +1,6 @@
 ﻿
 
-#1. Informing (Informieren)
+1. Informing (Informieren)
 
 Project Inspiration and Context:
 
