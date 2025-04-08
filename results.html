@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Empfohlene Spiele</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
+      color: #f8f8f2;
+    }
+    h1, h2 {
+      color: #ff77ff;
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    #mainRecommendation {
+      flex: 2;
+      padding: 10px;
+      border: 2px solid #006eff; /* Neon-Cyan */
+      margin-right: 10px;
+      min-width: 280px;
+      background: #1a1a2e;
+    }
+    #extraRecommendations {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ff77ff71; /* Neon-Pink */
+      min-width: 200px;
+      background: rgba(50, 50, 70, 0.8);
+    }
+    .game-card {
+      border: 1px solid #740396;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 4px;
+      background: #2c3e50;
+    }
+    .game-card h3 {
+      margin: 0 0 5px 0;
+    }
+    .error {
+      font-size: 1.2em;
+      color: #ff4444;
+    }
+  </style>
+</head>
+<body>
+  <h1>Empfohlene Spiele</h1>
+  <div id="content"></div>
+  
+  <script>
+    const dataString = localStorage.getItem("gameRecommendation");
+    if (!dataString) {
+      document.getElementById("content").innerHTML = "<p class='error'>Keine Empfehlung gefunden. Bitte starte das Quiz neu.</p>";
+    } else {
+      const resultData = JSON.parse(dataString);
+      if (resultData.error) {
+        document.getElementById("content").innerHTML = `<p class='error'>${resultData.message}</p>`;
+      } else {
+        const renderGame = g => `<div class="game-card">
+          <h3>${g.name}</h3>
+          <p><strong>Genre:</strong> ${g.genre}</p>
+          <p><strong>Mode:</strong> ${g.mode}</p>
+          <p><strong>Era:</strong> ${g.era}</p>
+          <p><strong>Setting:</strong> ${g.setting}</p>
+          <p><strong>Difficulty:</strong> ${g.difficulty}</p>
+          <p><strong>Visual:</strong> ${g.visual}</p>
+          <p><strong>Game Length:</strong> ${g.length}</p>
+        </div>`;
+        
+        let html = `<div class="container">
+                      <div id="mainRecommendation">
+                        <h2>Hauptempfehlung</h2>
+                        ${renderGame(resultData.main)}
+                      </div>
+                      <div id="extraRecommendations">
+                        <h2>Weitere Empfehlungen</h2>`;
+        if (resultData.extras && resultData.extras.length > 0) {
+          resultData.extras.forEach(g => {
+            html += renderGame(g);
+          });
+        } else {
+          html += "<p>Keine zusätzlichen Spiele gefunden.</p>";
+        }
+        html += "</div></div>";
+        document.getElementById("content").innerHTML = html;
+      }
+    }
+  </script>
+</body>
+</html>

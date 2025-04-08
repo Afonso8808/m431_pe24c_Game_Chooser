@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 100px;
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
+      color: #f8f8f2;
+    }
+    h1 {
+      color: #ff77ff;
+    }
+    label, input {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 1.2em;
+    }
+    button {
+      padding: 15px 20px;
+      font-size: 1em;
+      cursor: pointer;
+      margin-top: 10px;
+      background: #8e44ad;
+      border: none;
+      color: #f8f8f2;
+      border-radius: 4px;
+    }
+    .registerBtn {
+      background: #3498db;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Login</h1>
+  <form id="loginForm">
+    <label for="username">Benutzername:</label>
+    <input type="text" id="username" required>
+
+    <label for="password">Passwort:</label>
+    <input type="password" id="password" required>
+
+    <button type="submit" id="loginBtn">Einloggen</button>
+  </form>
+  <button class="registerBtn" id="goToRegistration">Noch keinen Account? Registrieren!</button>
+  
+  <script>
+
+    const PEPPER = "Jonas_isch_en_femboy";
+
+    async function sha256(str) {
+      const encoder = new TextEncoder();
+      const data = encoder.encode(str);
+      const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+      return bufferToHex(hashBuffer);
+    }
+
+    function bufferToHex(buffer) {
+      const byteArray = new Uint8Array(buffer);
+      return Array.from(byteArray).map(byte => byte.toString(16).padStart(2, '0')).join('');
+    }
+
+    document.getElementById('loginForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value;
+      if (!username || !password) {
+        alert('Bitte Benutzernamen und Passwort angeben');
+        return;
+      }
+
+      const existingUsers = JSON.parse(localStorage.getItem('users')) || [];
+      const user = existingUsers.find(u => u.username === username);
+      if (!user) {
+        alert('Benutzername oder Passwort ist falsch!');
+        return;
+      }
+      const computedHash = await sha256(password + user.salt + PEPPER);
+      if (computedHash === user.password) {
+        alert('Login erfolgreich!');
+        window.location.href = 'results.html';
+      } else {
+        alert('Benutzername oder Passwort ist falsch!');
+      }
+    });
+
+    document.getElementById('goToRegistration').addEventListener('click', function() {
+      window.location.href = 'users.html';
+    });
+  </script>
+</body>
+</html>
