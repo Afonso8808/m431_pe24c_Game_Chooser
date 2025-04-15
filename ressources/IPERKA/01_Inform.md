@@ -74,15 +74,12 @@
 
 ## Tutorials
 
-* **JavaScript Tutorials**:
-  * W3Schools, JavaScript Tutorial
-  * MDN Web Docs, JavaScript Guide
-* **Node.js**:
-  * Node.js official documentation to understand server-side handling of HTTP requests.
-* **SHA-256 and Hashing**:
-  * "Crypto.subtle.digest" documentation and articles on **password hashing**, **salting**, and **peppering**.
-* **Security Best Practices**:
-  * Articles on web security focusing on password protection and common vulnerabilities.
+
+* W3Schools. (n.d.). JavaScript Tutorial. Retrieved from [https://www.w3schools.com/js/](https://www.w3schools.com/js/)
+* MDN Web Docs. (n.d.). JavaScript Guide. Retrieved from [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide)
+* Node.js Documentation. (n.d.). Retrieved from [https://nodejs.org/en/docs/](https://nodejs.org/en/docs/)
+* The SHA-256 Standard. (n.d.). Retrieved from [https://en.wikipedia.org/wiki/SHA-2](https://en.wikipedia.org/wiki/SHA-2)
+* GitHub. (n.d.). GitHub Documentation. Retrieved from [https://docs.github.com/en/github](https://docs.github.com/en/github)
 
 ---
 
@@ -104,11 +101,3 @@
 * **Microsoft Paint**: For creating Sketches, I used **ms Paint**, which allowed me to visually represent the structure of the website and its flow.
 
 ---
-
-## References
-
-* W3Schools. (n.d.). JavaScript Tutorial. Retrieved from [https://www.w3schools.com/js/](https://www.w3schools.com/js/)
-* MDN Web Docs. (n.d.). JavaScript Guide. Retrieved from [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide)
-* Node.js Documentation. (n.d.). Retrieved from [https://nodejs.org/en/docs/](https://nodejs.org/en/docs/)
-* The SHA-256 Standard. (n.d.). Retrieved from [https://en.wikipedia.org/wiki/SHA-2](https://en.wikipedia.org/wiki/SHA-2)
-* GitHub. (n.d.). GitHub Documentation. Retrieved from [https://docs.github.com/en/github](https://docs.github.com/en/github)
