@@ -8,7 +8,7 @@
 
 ### What type of information did I need
 * **Dates**:
-  * The final deadline for the project was set by my teacher. This meant that I had to ensure everything was completed on time, including implementation, documentation, and testing.
+  * The final deadline for the project was set by my teacher and it was the 29 of April for the project and the 6.may for the presentation. This meant that I had to ensure everything was completed on time, including implementation, documentation, and testing.
 * **Deliverables**:
   * The product I needed to deliver was a working **website** that allows users to register, log in, and get personalized game recommendations.
   * I also needed to submit the **documentation** detailing the entire process, including design, coding, and testing.
@@ -92,7 +92,6 @@
 * **Visual Studio Code (VS Code)**: I used **VS Code** as my code editor. It's a lightweight, user-friendly IDE that supports JavaScript and Node.js development. It also has useful extensions for linting and debugging.
 * **Node.js**: This was the backend server I used to handle HTTP requests. With Node.js, I could easily serve static files and handle user registration and login functionality.
 * **Git and GitHub**: For version control, I used **Git** and hosted my project on **GitHub**. This allowed me to track changes, collaborate with others, and share my progress.
-* **Postman**: For testing the backend API, especially user login and registration processes, I used **Postman** to make sure the routes were functioning as expected.
 
 ### Tools for User Interface:
 * **HTML/CSS**: For the frontend, I used **HTML** for structuring the web pages and **CSS** for styling. The design was kept simple to ensure ease of use.
@@ -102,7 +101,7 @@
 ### Tools for Documentation:
 * **Markdown**: For writing the documentation, I used **Markdown**. This made it easy to format the text and include code snippets.
 * **Snipping Tool**: For capturing **screenshots** of the website, I used the **Snipping Tool** on Windows.
-* **Draw.io**: For creating diagrams and flowcharts, I used **Draw.io**, which allowed me to visually represent the structure of the website and its flow.
+* **Microsoft Paint**: For creating Sketches, I used **ms Paint**, which allowed me to visually represent the structure of the website and its flow.
 
 ---
 
@@ -113,7 +112,3 @@
 * Node.js Documentation. (n.d.). Retrieved from [https://nodejs.org/en/docs/](https://nodejs.org/en/docs/)
 * The SHA-256 Standard. (n.d.). Retrieved from [https://en.wikipedia.org/wiki/SHA-2](https://en.wikipedia.org/wiki/SHA-2)
 * GitHub. (n.d.). GitHub Documentation. Retrieved from [https://docs.github.com/en/github](https://docs.github.com/en/github)
-
----
-
-This **IPERKA documentation** follows the same structure and format as your previous example but is specifically tailored to the web development project you've undertaken. Feel free to adjust, add images, and use it in your GitHub repository!
