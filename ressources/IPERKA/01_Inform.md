@@ -1,68 +1,119 @@
-﻿
+# IPERKA Documentation for My Own Website with Node.js
 
-1. Informing (Informieren)
+## How I gathered the information needed for this assignment
 
-Project Inspiration and Context:
+### How did I get the idea
+* The idea was to create a game recommendation website where users can get personalized game suggestions based on their preferences. I wanted to include features like user registration, login functionality, and a secure way to store passwords. I thought about implementing hashing, salting, and peppering to ensure the passwords are stored securely.
+* After exploring different options, I realized that **Node.js** would be the best framework for the backend, as it allows creating a simple yet effective server. **HTML**, **CSS**, and **JavaScript** would be used for the frontend.
 
-I often found myself struggling to decide on the next game to play even though I owned a large collection. This recurring problem sparked the idea of developing a website that could offer personalized game recommendations based on my mood and preferences.
+### What type of information did I need
+* **Dates**:
+  * The final deadline for the project was set by my teacher. This meant that I had to ensure everything was completed on time, including implementation, documentation, and testing.
+* **Deliverables**:
+  * The product I needed to deliver was a working **website** that allows users to register, log in, and get personalized game recommendations.
+  * I also needed to submit the **documentation** detailing the entire process, including design, coding, and testing.
+* **Knowledge**:
+  * I had to learn **JavaScript**, as I had never used it before, especially for tasks like password hashing, local storage handling, and managing game recommendations dynamically.
+  * Additionally, I needed to refresh my knowledge of **Node.js** for setting up the server and handling HTTP requests.
+* **Tools needed**:
+  * I needed to choose the right tools for **coding** (Visual Studio Code, Node.js, etc.), and **version control** (GitHub).
 
-The goal was to provide an interactive, user-friendly platform where users could select from various options—such as game genre, play mode, and difficulty level—to receive tailored game suggestions.
+---
 
-Furthermore, I aimed to include a secure login and registration system to allow users to create accounts and save their preferences.
+## Gathering Information
 
-Research on Security and Password Handling:
+### Requirements for the Product
+* There were two sources for requirements: my teacher (the customer) and my own vision for how I wanted the website to function.
+* From my side, I wanted the website to be simple, beginner-friendly, and focused on security. The main features I envisioned were:
+  * **User registration** and **login**
+  * **Game recommendation** based on selected preferences like genre, difficulty, and game length
+  * Secure storage of passwords with **salt** and **pepper**
+* After gathering these requirements, I started planning and documenting them to ensure the project met the expectations.
 
-I started by researching the best practices in password security. I learned that storing passwords in plain text is extremely insecure.
+![requirements][product]
 
-My research led me to the concept of cryptographic hashing using algorithms like SHA-256. To further improve security, I delved into the importance of salting (adding a random, unique string to each password) and peppering (adding a secret constant value to further obfuscate the data) before hashing.
+### Requirements for the Documentation
+* The documentation requirements were laid out clearly, and I had to ensure I covered everything, including:
+  * **Technical explanation** of how the website works
+  * **Code snippets** explaining the logic behind important features like user registration and game recommendations
+  * **Screenshots** and visual aids showing the website in action
 
-I experimented with the Web Crypto API in JavaScript to understand how to produce a SHA-256 hash. For example, I wrote and tested a simple snippet in Visual Studio Code:
+![requirements][documentation]
 
+---
 
+## What type of information did I gather
 
+* **Dates**:
+  * The deadline for submission was set, and I ensured all my work was completed well before the due date, allowing enough time for testing and adjustments.
+* **Deliverables**:
+  * The main deliverable was the **game recommendation website**. The code should be fully functional, and the documentation should explain every part of the project.
+* **Tutorial Needed**:
+  * I had to learn about **password hashing**, **salt**, and **pepper** techniques. I used online resources and tutorials to understand how to implement these concepts securely in JavaScript.
+* **Tools Needed**:
+  * I identified the tools I would need for coding, documentation, version control, and testing.
 
+---
 
-async function sha256(password) {
+## Goals
 
-const encoder = new TextEncoder();
+### Key Goals for the Project:
 
-const data = encoder.encode(password);
+1. **Create a game recommendation website**:
+   - **Achievable**: A working website with a backend server running on Node.js, with a clear frontend to interact with the user.
+   - **Measured by**: Successfully deploying the website with working features such as user login, game recommendations, and security measures.
+   - **Realistic**: With a clear focus on creating a small-scale project, this goal was achievable within the project timeframe.
+   - **Timely**: The website was expected to be fully operational by the deadline.
 
-const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+2. **Learn password hashing and salting techniques**:
+   - **Achievable**: By implementing hashing, salting, and peppering in the user registration and login process.
+   - **Measured by**: The successful implementation of password encryption, ensuring users' credentials were stored securely.
+   - **Timely**: I ensured that hashing was implemented in the first phase of the project, allowing enough time for testing and troubleshooting.
 
-const byteArray = new Uint8Array(hashBuffer);
+---
 
-return Array.from(byteArray).map(b => b.toString(16).padStart(2, '0')).join('');
+## Tutorials
 
-}
+* **JavaScript Tutorials**:
+  * W3Schools, JavaScript Tutorial
+  * MDN Web Docs, JavaScript Guide
+* **Node.js**:
+  * Node.js official documentation to understand server-side handling of HTTP requests.
+* **SHA-256 and Hashing**:
+  * "Crypto.subtle.digest" documentation and articles on **password hashing**, **salting**, and **peppering**.
+* **Security Best Practices**:
+  * Articles on web security focusing on password protection and common vulnerabilities.
 
-const myPassword = "mypassword";
+---
 
-sha256(myPassword).then(hash => console.log("Test hash:", hash));
+## Tools Needed
 
+### Tools for Coding:
+* **Visual Studio Code (VS Code)**: I used **VS Code** as my code editor. It's a lightweight, user-friendly IDE that supports JavaScript and Node.js development. It also has useful extensions for linting and debugging.
+* **Node.js**: This was the backend server I used to handle HTTP requests. With Node.js, I could easily serve static files and handle user registration and login functionality.
+* **Git and GitHub**: For version control, I used **Git** and hosted my project on **GitHub**. This allowed me to track changes, collaborate with others, and share my progress.
+* **Postman**: For testing the backend API, especially user login and registration processes, I used **Postman** to make sure the routes were functioning as expected.
 
+### Tools for User Interface:
+* **HTML/CSS**: For the frontend, I used **HTML** for structuring the web pages and **CSS** for styling. The design was kept simple to ensure ease of use.
+* **JavaScript**: I used **JavaScript** to handle dynamic functionality such as form submissions, game recommendations, and the password hashing process.
+* **LocalStorage**: I used **localStorage** for temporarily storing user data (username, hashed password) during testing and debugging.
 
+### Tools for Documentation:
+* **Markdown**: For writing the documentation, I used **Markdown**. This made it easy to format the text and include code snippets.
+* **Snipping Tool**: For capturing **screenshots** of the website, I used the **Snipping Tool** on Windows.
+* **Draw.io**: For creating diagrams and flowcharts, I used **Draw.io**, which allowed me to visually represent the structure of the website and its flow.
 
+---
 
+## References
 
-This confirmed that the Web Crypto API produced consistent, unique hash outputs and laid the groundwork for integrating secure password handling in my project.
+* W3Schools. (n.d.). JavaScript Tutorial. Retrieved from [https://www.w3schools.com/js/](https://www.w3schools.com/js/)
+* MDN Web Docs. (n.d.). JavaScript Guide. Retrieved from [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide)
+* Node.js Documentation. (n.d.). Retrieved from [https://nodejs.org/en/docs/](https://nodejs.org/en/docs/)
+* The SHA-256 Standard. (n.d.). Retrieved from [https://en.wikipedia.org/wiki/SHA-2](https://en.wikipedia.org/wiki/SHA-2)
+* GitHub. (n.d.). GitHub Documentation. Retrieved from [https://docs.github.com/en/github](https://docs.github.com/en/github)
 
-Technology and Methodology Research:
+---
 
-I extensively reviewed resources on HTML, CSS, and JavaScript in order to build a responsive and visually appealing interface for my website.
-
-In addition, I explored Node.js to create a local server. Running the application via a local server helped ensure that all parts of the site share a consistent origin, which is essential for localStorage to work properly.
-
-I examined multiple tutorials and GitHub repositories (including those provided by my teacher) to learn best practices, and I also sought help from ChatGPT when I encountered obstacles.
-
-Preliminary Thoughts on the Game Database:
-
-As I began to collect game data, I opted to hardcode a simple game database as an array in my JavaScript files (e.g., in daten.js). This allowed me rapid prototyping without the need for a complex back-end database.
-
-The focus was to implement a basic filtering mechanism that suggests a game based on the criteria chosen by the user via a quiz interface.
-
-Challenges with LocalStorage:
-
-Initially, I attempted to use localStorage exclusively for maintaining user data and quiz results. However, I encountered issues because when accessing files using file:// URLs, localStorage behaves inconsistently. This problem motivated me to run my application on a local Node.js server (or using tools like VSCode Live Server), ensuring all pages share the same origin.
-
-Screenshot Placeholder:
+This **IPERKA documentation** follows the same structure and format as your previous example but is specifically tailored to the web development project you've undertaken. Feel free to adjust, add images, and use it in your GitHub repository!
