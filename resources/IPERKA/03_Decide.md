@@ -7,15 +7,15 @@
 ## Decision Log
 
 ### A. ** Decision:** Use Python as Programming Language
-	* **Reason** It's easier to open files through Python
-	* **Date:** 25.2.2025
+* **Reason** It's easier to open files through Python
+* **Date:** 25.2.2025
 
 ### B. ** Decision:** Funktions of the program
-	* **Reason** so i know what i'll need
-	* **Date:**5.3.2025
+* **Reason** so i know what i'll need
+* **Date:**5.3.2025
 ### C. ** Decision:** Starting over
-	* **Reason** Code doesn't work and i can't programm in Python
-	* **Date:**8.4.2025
+* **Reason** Code doesn't work and i can't programm in Python
+* **Date:**8.4.2025
 
 ### 1. **Decision:** Use **Node.js** as the backend
    * **Reason:** I needed a lightweight backend solution that allowed me to quickly serve static pages and manage routing for user registration and login.
