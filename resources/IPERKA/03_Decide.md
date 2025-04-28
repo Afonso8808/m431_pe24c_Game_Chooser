@@ -6,14 +6,15 @@
 
 ## Decision Log
 
-### A. ** Decision:** Use Python as Programming Language
+### A.  Decision: Use Python as Programming Language
 * **Reason** It's easier to open files through Python
 * **Date:** 25.2.2025
 
-### B. ** Decision:** Funktions of the program
+### B.  Decision: Funktions of the program
 * **Reason** so i know what i'll need
 * **Date:**5.3.2025
-### C. ** Decision:** Starting over
+
+### C.  Decision: Starting over
 * **Reason** Code doesn't work and i can't programm in Python
 * **Date:**8.4.2025
 
