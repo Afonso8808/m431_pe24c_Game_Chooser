@@ -1,35 +1,65 @@
-3. Deciding (Entscheiden)
+# How I made decisions for this assignment
 
-    Technology Selection:
+## High Level Decisions
+* Since I worked solo on this project, decision-making was quite straightforward. However, documenting decisions is crucial to ensure clarity and avoid unnecessary confusion later on.
+* The key to my decision-making process was simplicity, functionality, and time constraints. I focused on making decisions that allowed me to quickly implement and test the core features of the website.
 
-        JavaScript & HTML/CSS: Chosen for the front-end to allow rapid prototyping and immediate feedback. This technology is well-known, widely documented, and offers an accessible platform for building an interactive web interface.
+## Decision Log
 
-        Node.js: Selected to serve the web pages from a consistent origin. Running the app on a local Node.js server (or using a tool like VSCode Live Server) resolves localStorage inconsistencies and allows easier debugging and file management.
+### A. ** Decision:** Use Python as Programming Language
+	* **Reason** It's easier to open files through Python
+	* **Date:** 25.2.2025
 
-        LocalStorage: Despite its limitations regarding security, localStorage was deemed sufficient for this educational project. It provides a simple method to persist data (for example, user accounts) without needing to set up an external database.
+### B. ** Decision:** Funktions of the program
+	* **Reason** so i know what i'll need
+	* **Date:**5.3.2025
+### C. ** Decision:** Starting over
+	* **Reason** Code doesn't work and i can't programm in Python
+	* **Date:**8.4.2025
 
-        Web Crypto API: The built-in SubtleCrypto API was used for hashing. I opted for SHA-256 because it is widely supported and ensures secure password hashing when combined with salt and pepper.
+### 1. **Decision:** Use **Node.js** as the backend
+   * **Reason:** I needed a lightweight backend solution that allowed me to quickly serve static pages and manage routing for user registration and login.
+   * **Date:** 12.4.2025
 
-    Key Design Considerations:
+### 2. **Decision:** Store user data temporarily in **localStorage**
+   * **Reason:** LocalStorage was easy to implement for storing usernames and hashed passwords for this small-scale project. Later, I could integrate a full database solution if needed.
+   * **Date:** 14.4.2025
 
-        I decided early on that the security of user passwords was a top priority. This led to extensive research on salting and peppering, and eventually to the incorporation of these techniques. In the final implementation, passwords are never stored in plain text.
+### 3. **Decision:** Implement password **hashing** with **SHA-256**, **salted** and **peppered**
+   * **Reason:** Security was a priority, and I needed to protect user passwords. Using SHA-256 with salt and pepper is a common practice to ensure passwords are not stored in plain text.
+   * **Date:** 18.4.2025
 
-        The user interface had to be simple and welcoming, even for users unfamiliar with gaming or technical details. Thus, I chose a modern design with clear instructions and intuitive navigation.
+### 4. **Decision:** Hardcode game data in the frontend (initially)
+   * **Reason:** Since I had a limited amount of time to get the project running, I decided to hardcode a list of games in JavaScript. Later, I could consider adding dynamic data from a database.
+   * **Date:** 21.4.2025
 
-    Why Switch from the Python Project?
+### 5. **Decision:** Start the documentation early & update it as I go along
+   * **Reason:** It is easier to document as I work rather than leaving it until the end. This way, I can recall my thought process and decisions while the project is still fresh in my mind.
+   * **Date:** 23.4.2025
 
-        Initially, I had attempted to develop a Python game launcher that would integrate games from various platforms (like Steam, Ubisoft Connect, and Epic Games). However, this project quickly became overwhelmed by integration issues, bugs, and a level of complexity that exceeded my current skill set.
+### 6. **Decision:** Use **GitHub Projects** to track tasks and milestones
+   * **Reason:** GitHub Projects provided an easy and centralized way to manage tasks, deadlines, and track progress.
+   * **Date:** 24.4.2025
 
-        The challenges in the Python project included problems with multi-platform compatibility, the need for a complex GUI, and difficulties in handling multiple APIs simultaneously. With constant errors and an unmanageable codebase, I realized that the Python approach was unsustainable for now.
+---
 
-        Switching to a web-based solution using Node.js and client-side JavaScript was a more feasible path. It allowed me to see immediate results in the browser, and I could incrementally build and test each feature. This pivot not only enhanced my learning experience but also led to a product that is more user-friendly and maintainable.
+## Decision Matrix
+One of the key decisions I had to make was whether to use a **full backend database solution** or rely on **localStorage** for this project. Given the simplicity of the project and the limited time available, I opted for localStorage.
 
-    Decision Rationale Summary:
+The matrix below helped me visualize the decision-making process for using localStorage versus a full database solution:
 
-        Feasibility: The web app approach is easier to implement and debug using the tools I’m familiar with (VSCode, Live Server).
+| **Criteria**                | **localStorage** | **Database**  |
+|-----------------------------|------------------|---------------|
+| **Ease of Setup**            | Very Easy        | Complex       |
+| **Scalability**              | Limited          | Highly Scalable|
+| **Security**                 | Medium           | High          |
+| **Time to Implement**        | Short            | Long          |
+| **Performance**              | Fast for small datasets | Slower for large datasets |
 
-        User Experience: A browser-based solution is more accessible and attractive for users compared to a desktop Python application.
+Based on the matrix, I chose **localStorage** because it was quick to implement and good enough for this small-scale project.
 
-        Learning Outcome: I gained profound insights into modern web development, secure password handling, and the importance of iterative testing.
+![Decision Matrix][decide01]
 
-    Screenshot Placeholders:
+---
+
+[decide01]: ../02_resources/images/decide-decisionmatrix.JPG
