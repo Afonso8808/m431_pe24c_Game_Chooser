@@ -58,17 +58,12 @@ Open your browser to `http://localhost:8080/index.html` (after starting the serv
 
 All source files live on GitHub:
 
-- **Repo:** https://github.com/Afonso8808/m431_pe24c_Game_Chooser
+[`Source_code`](https://github.com/Afonso8808/m431_pe24c_Game_Chooser)
 
 ---
 
 ## Download & Install
 [`Download`](https://github.com/Afonso8808/m431_pe24c_Game_Chooser/tree/main/resources/Download)
-
----
-
-## Source_code
-[`Source_code`](https://github.com/Afonso8808/m431_pe24c_Game_Chooser/tree/main/Complette%20Website)
 
 ---
 ## IPERKA
