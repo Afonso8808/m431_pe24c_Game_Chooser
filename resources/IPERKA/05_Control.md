@@ -50,13 +50,13 @@
 I captured screenshots at various stages of the testing process:
 
 1. **Registration Page**: A screenshot showing successful storage of user data.
-   - ![Registration Screenshot][control01]
+   ![Registration Screenshot][control01]
 
 2. **Login Page**: A screenshot of the login page with the developer console open, verifying that the computed hash matches the stored hash.
-   - ![Login Screenshot][control02]
+   ![Login Screenshot][control02]
 
 3. **Results Page**: A screenshot of the results page displaying the game recommendation based on the quiz responses.
-   - ![Results Screenshot][control03]
+   ![Results Screenshot][control03]
 
 ---
 
