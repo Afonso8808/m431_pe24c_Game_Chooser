@@ -1,53 +1,76 @@
-# My Own Website with Node.js
+# m431_pe24c_Game_Chooser
 
-## Overview
-
-Welcome to my **game suggestion website**, created using **Node.js**, **HTML**, **JavaScript**, and **CSS**! The website is designed to allow users to discover new games based on their personal preferences. The core functionality includes:
-
-- **User Registration and Login**: Users can create an account, log in, and manage their credentials securely.
-- **Secure Password Storage**: Passwords are hashed using **SHA-256**, **salted** and **peppered** for additional security.
-- **Game Recommendation System**: Based on user-selected preferences, the website suggests games that match their criteria, such as genre, difficulty, and length.
-- **Node.js Server**: The app runs on a simple Node.js server, making it easy to extend and manage.
-
-This application is a perfect example of how **Node.js** and **JavaScript** can be used to create a functional, interactive web application.
-
-### Features:
-- **User Registration and Login**: With secure password hashing (salt and pepper).
-- **Game Recommendations**: Personalized suggestions based on selected preferences.
-- **Secure User Authentication**: Passwords are hashed and securely stored, preventing sensitive data leakage.
-- **LocalStorage Integration**: User data is managed using **LocalStorage**, simplifying data storage on the client side.
-- **Customizable User Interface**: Simple and user-friendly UI for both tech-savvy and beginner users.
+Welcome to my assignment: a **Game Recommendation Website** built with **Node.js**, **HTML** and **JavaScript**.
 
 ---
 
-## Table of Contents
+## The Product
 
-- [Overview](#overview)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Code Snippets](#code-snippets)
-- [Screenshots](#screenshots)
-- [License](#license)
-- [Acknowledgments](#acknowledgments)
+**Game-Chooser** is a small web application that helps gamers find new games specified to their preferences. It features:
+
+- **Quiz Interface (`index.html`)**  
+  Users select preferred genre, mode, era, setting, difficulty, visual style and length.
+
+- **Registration (`users.html`)**  
+  Create a new account—passwords are hashed with SHA-256, salted per user and peppered with a constant.
+
+- **Login (`login.html`)**  
+  Secure authentication: your entered password is hashed (with your salt + pepper) and compared against the stored hash.
+
+- **Recommendations (`results.html`)**  
+  Displays one main recommendation plus up to five extras, based on matching and scoring your preferences.
+
+- **Backend (`daten.js`)**  
+  A minimal Node.js server (using [`http-server`](https://www.npmjs.com/package/http-server) or similar) ensures all pages share the same origin, so that `localStorage` works correctly.
+
+### Features
+
+- **Secure Passwords**  
+  - SHA-256 hashing  
+  - Per-user random salt  
+  - Global pepper constant  
+  - Hashes stored (never plain text)
+
+- **Customizable Quiz**  
+  - Hard-coded array of 200+ games  
+  - Prioritized attributes (genre, mode, visual) for filtering  
+  - Full score ranking over all selected attributes
+
+- **Beginner-Friendly**  
+  - Intuitive, beginner-focused UI  
+  - Clear navigation: register → login → quiz → results  
+  - Runs entirely in the browser on Windows, macOS or Linux
 
 ---
 
-## Installation
+## Watch the Demo
 
-### Prerequisites
+Open your browser to `http://localhost:8080/index.html` (after starting the server) and follow along:
 
-To set up this project on your local machine, you’ll need to install the following:
+1. Register a new user  
+2. Log in with your credentials (only username and password  
+3. Complete the quiz  
+4. View your personalized game recommendations  
 
-- **Node.js**: Make sure you have **Node.js** (v16 or later) installed. If you haven't installed it yet, you can download it from [Node.js](https://nodejs.org/).
-- **Git**: Install Git if you plan to clone this repository directly from GitHub.
+---
 
-### Steps to Run Locally
+## Source Code
 
-1. **Clone the repository**:
+All source files live on GitHub:
 
-   Open your terminal or command prompt and use the following command to clone the repository:
+[`Source_code`](https://github.com/Afonso8808/m431_pe24c_Game_Chooser)
 
-   ```bash
-   git clone https://github.com/yourusername/game-chooser.git
+---
+
+## Download & Install
+[`Download`](https://github.com/Afonso8808/m431_pe24c_Game_Chooser/tree/main/resources/Download)
+
+---
+## IPERKA
+[`01_Inform`](https://github.com/Afonso8808/m431_pe24c_Game_Chooser/blob/main/resources/IPERKA/01_Inform.md)
+[`02_Plan`](https://github.com/Afonso8808/m431_pe24c_Game_Chooser/blob/main/resources/IPERKA/02_Plan.md)
+[`03_Decide`](https://github.com/Afonso8808/m431_pe24c_Game_Chooser/blob/main/resources/IPERKA/03_Decide.md)
+[`04_Realize`](https://github.com/Afonso8808/m431_pe24c_Game_Chooser/blob/main/resources/IPERKA/04_Realize.md)
+[`05_Control`](https://github.com/Afonso8808/m431_pe24c_Game_Chooser/blob/main/resources/IPERKA/05_Control.md)
+[`06_Evaluate`](https://github.com/Afonso8808/m431_pe24c_Game_Chooser/blob/main/resources/IPERKA/06_Evaluate.md)
+
