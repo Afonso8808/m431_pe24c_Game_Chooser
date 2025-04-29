@@ -80,9 +80,9 @@ Since my time for the project was quite limited, I created a resource plan from 
 ---
 
 ### Milestones
-* I laid out six simple milestones for the project to break down the work into manageable stages.
+* I laid out seven simple milestones for the project to break down the work into manageable stages.
   
-![Milestones][plan2]
+![Milestones][plan1]
 
 ---
 
@@ -99,21 +99,22 @@ Since my time for the project was quite limited, I created a resource plan from 
 * Occasionally, I started tasks before the scheduled time, so I adjusted the start and due dates accordingly.
 * New tasks were also added to the list as I identified them during the development process.
 
-![Tasklist Updates][plan5]
+| Task                                    | Status        | Estimated Hours | Actual Hours | Finish Date   |
+|-----------------------------------------|---------------|-----------------|--------------|---------------|
+| Set up project repository on GitHub     | Completed     | 2               | 2            | 12.02.2025    |
+| Install Node.js and dependencies        | Completed     | 3               | 3            | 13.02.2025    |
+| Implement registration page (users.html) | Completed     | 5               | 5            | 15.02.2025    |
+| Implement login page (login.html)       | Completed     | 5               | 5            | 17.02.2025    |
+| Set up local server for testing         | Completed     | 3               | 3            | 18.02.2025    |
+| Implement game recommendation logic     | Completed     | 8               | 8            | 21.02.2025    |
+| Test registration and login functions   | Completed     | 4               | 4            | 23.02.2025    |
+| Design and implement results page       | Completed     | 6               | 6            | 26.02.2025    |
+| Review code and documentation          | Completed     | 6               | 6            | 28.02.2025    |
+| Final testing and bug fixes             | Completed     | 7               | 7            | 29.04.2025    |
 
 ---
 
-### Checking My Progress
-* To track my progress, I compared the Actual effort (time spent) against the Estimated effort (time planned).
-* I also checked the **milestones** to ensure I was on track and meeting my deadlines.
-  
-![Progress Check][plan6]
-
----
-
-[plan1]: ../resources/images/plan-resource-plan.jpg
-[plan2]: ../images/plan-milestones.jpg
-[plan5]: ../resources/images/plan-tasklist-03.JPG
-[plan6]: ../resources/images/plan-check-progress-01.JPG
+[plan1]: ../images/plan-milestones.jpg
+[plan2]: ../resources/images/plan-tasklist-03.JPG
 
 [sketch1]: ../images/analyze-plan-01.jpg
