@@ -68,4 +68,4 @@ Since my time for the project was quite limited, I created a resource plan from 
 [plan5]: ../resources/images/plan-tasklist-03.JPG
 [plan6]: ../resources/images/plan-check-progress-01.JPG
 
-[sketch1]: ../resources/images/analyze-plan-01.jpg
+[sketch1]: ../images/analyze-plan-01.jpg
