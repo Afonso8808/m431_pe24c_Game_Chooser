@@ -60,14 +60,6 @@ I captured screenshots at various stages of the testing process:
 
 ---
 
-## Test Summary
-
-### Test Protocol
-- The tests were executed successfully with minor adjustments for error handling during login and registration.
-- The main issue found was related to duplicate usernames during registration and hash mismatch during login, both of which were addressed.
-
-
----
 
 
 
