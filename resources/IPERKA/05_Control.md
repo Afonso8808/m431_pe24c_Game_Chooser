@@ -71,9 +71,9 @@ I captured screenshots at various stages of the testing process:
 
 
 
-[control01]: ../resources/images/control-registration-screenshot.jpg
-[control02]: ../resources/images/control-login-screenshot.jpg
-[control03]: ../resources/images/control-results-screenshot.jpg
-[protocol]: ../resources/images/control-testprotocol-01.JPG
+[control01]: ../images/control-registration-screenshot.jpg
+[control02]: ../images/control-login-screenshot.jpg
+[control03]: ../images/control-results-screenshot.jpg
+[protocol]: ../images/control-testprotocol-01.JPG
 
 
