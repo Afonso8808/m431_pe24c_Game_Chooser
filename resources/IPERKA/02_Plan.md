@@ -112,7 +112,7 @@ Since my time for the project was quite limited, I created a resource plan from 
 ---
 
 [plan1]: ../resources/images/plan-resource-plan.jpg
-[plan2]: ../images/plan-milestones.JPG
+[plan2]: ../images/plan-milestones.jpg
 [plan5]: ../resources/images/plan-tasklist-03.JPG
 [plan6]: ../resources/images/plan-check-progress-01.JPG
 
