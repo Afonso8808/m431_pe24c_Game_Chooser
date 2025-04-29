@@ -66,16 +66,14 @@ I captured screenshots at various stages of the testing process:
 - The tests were executed successfully with minor adjustments for error handling during login and registration.
 - The main issue found was related to duplicate usernames during registration and hash mismatch during login, both of which were addressed.
 
-![Test Protocol][protocol]
 
 ---
 
 
 
-[control01]: ../02_resources/images/control-registration-screenshot.jpg
-[control02]: ../02_resources/images/control-login-screenshot.jpg
-[control03]: ../02_resources/images/control-results-screenshot.jpg
-[protocol]: ../02_resources/images/control-testprotocol-01.JPG
+[control01]: ../resources/images/control-registration-screenshot.jpg
+[control02]: ../resources/images/control-login-screenshot.jpg
+[control03]: ../resources/images/control-results-screenshot.jpg
+[protocol]: ../resources/images/control-testprotocol-01.JPG
 
-[issue50]: https://github.com/Afonso8808/m431_pe24c_Game_Chooser/issues/50
-[issue54]: https://github.com/Afonso8808/m431_pe24c_Game_Chooser/issues/54
+
