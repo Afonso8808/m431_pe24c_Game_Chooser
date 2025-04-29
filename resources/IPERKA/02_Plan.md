@@ -13,8 +13,6 @@
 * During my planning, I thought of the core features first and then proceeded to structure the project step by step.
 
 ![Analyze][sketch1]
-![Analyze][sketch2]
-![Analyze][sketch3]
 
 ---
 
@@ -77,5 +75,4 @@ Since my time for the project was quite limited, I created a resource plan from 
 [plan7]: ../resources/images/plan-check-progress-01.JPG
 
 [sketch1]: ../resources/images/analyze-plan-01.jpeg
-[sketch2]: ../resources/images/analyze-plan-02.jpeg
-[sketch3]: ../resources/images/analyze-plan-03.jpeg
+
