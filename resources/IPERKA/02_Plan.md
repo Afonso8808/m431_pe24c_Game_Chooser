@@ -74,5 +74,5 @@ Since my time for the project was quite limited, I created a resource plan from 
 [plan6]: ../resources/images/plan-gantt-01.JPG
 [plan7]: ../resources/images/plan-check-progress-01.JPG
 
-[sketch1]: ../resources/images/analyze-plan-01.jpeg
+[sketch1]: ..resources/images/analyze-plan-01.jpeg
 
