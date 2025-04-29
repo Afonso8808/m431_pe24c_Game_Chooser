@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Game Chooser – Ohne Plattform, min. 3 Attribute</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background: #fafafa;
+    }
+    h1 {
+      color: #333;
+    }
+    .question {
+      margin-bottom: 20px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      background: #fff;
+    }
+    .question p {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    label {
+      margin-right: 10px;
+    }
+    button {
+      padding: 10px 15px;
+      font-size: 1em;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    /* Ergebnisbereich */
+    #resultArea {
+      display: none;
+      margin-top: 20px;
+    }
+    /* Layout: Hauptempfehlung links, zusätzliche Empfehlungen rechts */
+    #resultArea .container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    #mainRecommendation {
+      flex: 2;
+      padding: 10px;
+      border: 2px solid #007bff;
+      margin-right: 20px;
+      min-width: 280px;
+      background: #e9f2ff;
+    }
+    #extraRecommendations {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ccc;
+      min-width: 200px;
+      background: #fff;
+    }
+    .game-card {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 4px;
+      background: #f9f9f9;
+    }
+    .game-card h3 {
+      margin: 0 0 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Finde dein perfektes Video Game!</h1>
+  
+  <!-- Quiz-Formular: Alle Attribute außer Plattform -->
+  <form id="quizForm">
+    <div class="question">
+      <p>Welches Genre bevorzugst du?</p>
+      <input type="radio" id="genre_action" name="genre" value="action" required>
+      <label for="genre_action">Action</label><br>
+      <input type="radio" id="genre_rpg" name="genre" value="rpg">
+      <label for="genre_rpg">RPG</label><br>
+      <input type="radio" id="genre_shooter" name="genre" value="shooter">
+      <label for="genre_shooter">Shooter</label><br>
+      <input type="radio" id="genre_puzzle" name="genre" value="puzzle">
+      <label for="genre_puzzle">Puzzle</label><br>
+      <input type="radio" id="genre_sport" name="genre" value="sport">
+      <label for="genre_sport">Sport</label><br>
+      <input type="radio" id="genre_racing" name="genre" value="racing">
+      <label for="genre_racing">Racing</label><br>
+      <input type="radio" id="genre_simulation" name="genre" value="simulation">
+      <label for="genre_simulation">Simulation</label><br>
+      <input type="radio" id="genre_indie" name="genre" value="indie">
+      <label for="genre_indie">Indie</label>
+    </div>
+    
+    <div class="question">
+      <p>Welchen Spielmodus bevorzugst du?</p>
+      <input type="radio" id="mode_single" name="mode" value="single" required>
+      <label for="mode_single">Singleplayer</label><br>
+      <input type="radio" id="mode_multi" name="mode" value="multi">
+      <label for="mode_multi">Multiplayer</label>
+    </div>
+    
+    <div class="question">
+      <p>Modern oder Classic?</p>
+      <input type="radio" id="era_modern" name="era" value="modern" required>
+      <label for="era_modern">Modern</label><br>
+      <input type="radio" id="era_classic" name="era" value="classic">
+      <label for="era_classic">Classic</label>
+    </div>
+    
+    <div class="question">
+      <p>Welches Setting spricht dich an?</p>
+      <input type="radio" id="setting_fantasy" name="setting" value="fantasy" required>
+      <label for="setting_fantasy">Fantasy</label><br>
+      <input type="radio" id="setting_scifi" name="setting" value="scifi">
+      <label for="setting_scifi">Science Fiction</label><br>
+      <input type="radio" id="setting_historical" name="setting" value="historical">
+      <label for="setting_historical">Historisch</label><br>
+      <input type="radio" id="setting_urban" name="setting" value="urban">
+      <label for="setting_urban">Urban</label>
+    </div>
+    
+    <div class="question">
+      <p>Wie herausfordernd soll es sein?</p>
+      <input type="radio" id="difficulty_casual" name="difficulty" value="casual" required>
+      <label for="difficulty_casual">Casual</label><br>
+      <input type="radio" id="difficulty_hardcore" name="difficulty" value="hardcore">
+      <label for="difficulty_hardcore">Hardcore</label>
+    </div>
+    
+    <div class="question">
+      <p>Welchen visuellen Stil magst du?</p>
+      <input type="radio" id="visual_realistic" name="visual" value="realistic" required>
+      <label for="visual_realistic">Realistic</label><br>
+      <input type="radio" id="visual_stylized" name="visual" value="stylized">
+      <label for="visual_stylized">Stylized</label><br>
+      <input type="radio" id="visual_retro" name="visual" value="retro">
+      <label for="visual_retro">Retro</label><br>
+      <input type="radio" id="visual_anime" name="visual" value="anime">
+      <label for="visual_anime">Anime</label>
+    </div>
+    
+    <div class="question">
+      <p>Welche Spiel-Länge bevorzugst du?</p>
+      <input type="radio" id="length_short" name="length" value="short" required>
+      <label for="length_short">Kurz</label><br>
+      <input type="radio" id="length_medium" name="length" value="medium">
+      <label for="length_medium">Mittel</label><br>
+      <input type="radio" id="length_long" name="length" value="long">
+      <label for="length_long">Lang</label>
+    </div>
+    
+    <button type="submit">Spiel finden</button>
+  </form>
+  
+  <div id="resultArea">
+    <div class="container">
+      <div id="mainRecommendation">
+        <h2>Hauptempfehlung</h2>
+        <div id="mainGame"></div>
+      </div>
+      <div id="extraRecommendations">
+        <h2>Weitere Empfehlungen</h2>
+        <div id="extraGames"></div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    // Datensatz: 100 Titel im gewünschten Format (alle Attribute, ohne "platform")
+    const games = [
+      { name: "The Legend of Zelda: Ocarina of Time",       genre: "action",    mode: "single", era: "classic",   setting: "fantasy",    difficulty: "casual",   visual: "retro",    length: "long" },
+      { name: "Super Mario Bros.",                          genre: "action",    mode: "single", era: "classic",   setting: "fantasy",    difficulty: "casual",   visual: "retro",    length: "short" },
+      { name: "Half-Life 2",                                genre: "shooter",   mode: "single", era: "modern",    setting: "scifi",      difficulty: "hardcore", visual: "realistic",length: "medium" },
+      { name: "Red Dead Redemption 2",                      genre: "action",    mode: "single", era: "modern",    setting: "historical",difficulty: "hardcore", visual: "realistic",length: "long" },
+      { name: "Minecraft",                                  genre: "simulation",mode: "single", era: "modern",    setting: "fantasy",    difficulty: "casual",   visual: "retro",    length: "long" },
+      { name: "Tetris",                                     genre: "puzzle",   mode: "single", era: "classic",   setting: "scifi",      difficulty: "casual",   visual: "retro",    length: "short" },
+      { name: "Portal 2",                                   genre: "puzzle",   mode: "single", era: "modern",    setting: "scifi",      difficulty: "casual",   visual: "stylized", length: "medium" },
+      { name: "The Witcher 3: Wild Hunt",                   genre: "rpg",      mode: "single", era: "modern",    setting: "fantasy",    difficulty: "hardcore", visual: "realistic",length: "long" },
+      { name: "Final Fantasy VII",                          genre: "rpg",      mode: "single", era: "classic",   setting: "fantasy",    difficulty: "casual",   visual: "retro",    length: "long" },
+      { name: "Grand Theft Auto V",                         genre: "action",    mode: "single", era: "modern",    setting: "urban",      difficulty: "casual",   visual: "realistic",length: "long" },
+      { name: "Metal Gear Solid",                           genre: "action",    mode: "single", era: "classic",   setting: "urban",      difficulty: "hardcore", visual: "stylized", length: "medium" },
+      { name: "Bioshock",                                   genre: "shooter",   mode: "single", era: "modern",    setting: "scifi",      difficulty: "hardcore", visual: "realistic",length: "medium" },
+      { name: "Resident Evil 4",                            genre: "action",    mode: "single", era: "modern",    setting: "urban",      difficulty: "hardcore", visual: "realistic",length: "medium" },
+      { name: "Super Smash Bros. Ultimate",                 genre: "action",    mode: "multi",  era: "modern",    setting: "fantasy",    difficulty: "casual",   visual: "stylized", length: "medium" },
+      { name: "Wolfenstein",                                genre: "shooter",   mode: "single", era: "modern",    setting: "scifi",      difficulty: "hardcore", visual: "realistic",length: "medium" },
+      { name: "Call of Duty: Modern Warfare",               genre: "shooter",   mode: "multi",  era: "modern",    setting: "urban",      difficulty: "hardcore", visual: "realistic",length: "medium" },
+      { name: "New Super Mario Bros.",                      genre: "action",    mode: "single", era: "modern",    setting: "fantasy",    difficulty: "casual",   visual: "retro",    length: "short" },
+      { name: "Terraria",                                   genre: "indie",    mode: "single", era: "modern",    setting: "fantasy",    difficulty: "casual",   visual: "stylized", length: "long" },
+      { name: "The Elder Scrolls V: Skyrim",                genre: "rpg",      mode: "single", era: "modern",    setting: "fantasy",    difficulty: "hardcore", visual: "realistic",length: "long" },
+      { name: "FIFA 21",                                    genre: "sport",    mode: "multi",  era: "modern",    setting: "urban",      difficulty: "casual",   visual: "realistic",length: "medium" },
+      { name: "Mass Effect 2",                              genre: "rpg",      mode: "single", era: "modern",    setting: "scifi",      difficulty: "hardcore", visual: "realistic",length: "long" },
+      { name: "Halo 2",                                     genre: "shooter",   mode: "single", era: "modern",    setting: "scifi",      difficulty: "hardcore", visual: "realistic",length: "medium" },
+      { name: "BioShock Infinite",                          genre: "shooter",   mode: "single", era: "modern",    setting: "scifi",      difficulty: "hardcore", visual: "realistic",length: "medium" },
+      { name: "God of War",                                 genre: "action",    mode: "single", era: "modern",    setting: "historical",difficulty: "hardcore", visual: "realistic",length: "long" },
+      { name: "Assassin's Creed IV: Black Flag",            genre: "action",    mode: "single", era: "modern",    setting: "historical",difficulty: "hardcore", visual: "stylized", length: "medium" },
+      { name: "Uncharted 4: A Thief's End",                 genre: "action",    mode: "single", era: "modern",    setting: "urban",      difficulty: "casual",   visual: "stylized", length: "long" },
+      { name: "Final Fantasy X",                            genre: "rpg",      mode: "single", era: "classic",   setting: "fantasy",    difficulty: "casual",   visual: "retro",    length: "long" },
+      { name: "Persona 5",                                  genre: "rpg",      mode: "single", era: "modern",    setting: "urban",      difficulty: "hardcore", visual: "anime",    length: "long" },
+      { name: "Dark Souls",                                 genre: "action",    mode: "single", era: "modern",    setting: "historical",difficulty: "hardcore", visual: "stylized", length: "long" },
+      { name: "Sekiro: Shadows Die Twice",                  genre: "action",    mode: "single", era: "modern",    setting: "historical",difficulty: "hardcore", visual: "stylized", length: "medium" },
+      { name: "Cuphead",                                    genre: "indie",    mode: "single", era: "modern",    setting: "fantasy",    difficulty: "hardcore", visual: "retro",    length: "short" },
+      { name: "Celeste",                                    genre: "indie",    mode: "single", era: "modern",    setting: "urban",      difficulty: "hardcore", visual: "stylized", length: "short" },
+      { name: "Spelunky",                                   genre: "indie",    mode: "single", era: "modern",    setting: "urban",      difficulty: "hardcore", visual: "stylized", length: "short" },
+      { name: "Donkey Kong Country",                        genre: "action",    mode: "single", era: "classic",   setting: "fantasy",    difficulty: "casual",   visual: "retro",    length: "medium" },
+      { name: "Metroid Prime",                              genre: "action",    mode: "single", era: "modern",    setting: "scifi",      difficulty: "hardcore", visual: "realistic",length: "medium" },
+      { name: "Castlevania: Symphony of the Night",         genre: "action",    mode: "single", era: "classic",   setting: "historical",difficulty: "hardcore", visual: "retro",    length: "long" },
+      { name: "Street Fighter II",                          genre: "action",    mode: "single", era: "classic",   setting: "urban",      difficulty: "casual",   visual: "retro",    length: "short" },
+      { name: "Mortal Kombat",                              genre: "action",    mode: "single", era: "classic",   setting: "urban",      difficulty: "hardcore", visual: "retro",    length: "short" },
+      { name: "The Sims",                                   genre: "simulation",mode: "single", era: "modern",    setting: "urban",      difficulty: "casual",   visual: "stylized", length: "long" },
+      { name: "SimCity 4",                                  genre: "simulation",mode: "single", era: "modern",    setting: "urban",      difficulty: "casual",   visual: "stylized", length: "medium" },
+      { name: "Civilization V",                             genre: "strategy",  mode: "single", era: "modern",    setting: "historical",difficulty: "hardcore", visual: "realistic",length: "long" },
+      { name: "StarCraft II",                               genre: "strategy",  mode: "single", era: "modern",    setting: "scifi",      difficulty: "hardcore", visual: "realistic",length: "long" },
+      { name: "Age of Empires II",                          genre: "strategy",  mode: "single", era: "classic",   setting: "historical",difficulty: "casual",   visual: "retro",    length: "long" },
+      { name: "Dota 2",                                     genre: "rpg",     mode: "multi",  era: "modern",    setting: "urban",      difficulty: "hardcore", visual: "stylized", length: "long" },
+      { name: "League of Legends",                          genre: "rpg",     mode: "multi",  era: "modern",    setting: "urban",      difficulty: "casual",   visual: "stylized", length: "long" },
+      { name: "World of Warcraft",                          genre: "rpg",     mode: "multi",  era: "modern",    setting: "fantasy",    difficulty: "hardcore", visual: "realistic",length: "long" },
+      { name: "Counter-Strike: Global Offensive",           genre: "shooter", mode: "multi",  era: "modern",    setting: "urban",      difficulty: "hardcore", visual: "realistic",length: "medium" },
+      { name: "Overwatch",                                  genre: "shooter", mode: "multi",  era: "modern",    setting: "urban",      difficulty: "casual",   visual: "stylized", length: "medium" },
+      { name: "Fortnite",                                   genre: "shooter", mode: "multi",  era: "modern",    setting: "urban",      difficulty: "casual",   visual: "stylized", length: "medium" },
+      { name: "Rocket League",                              genre: "sport",   mode: "multi",  era: "modern",    setting: "urban",      difficulty: "casual",   visual: "stylized", length: "short" },
+      { name: "Call of Duty: Black Ops",                    genre: "shooter", mode: "multi",  era: "modern",    setting: "urban",      difficulty: "hardcore", visual: "realistic",length: "medium" },
+      { name: "Watch Dogs 2",                               genre: "action",  mode: "single", era: "modern",    setting: "urban",      difficulty: "casual",   visual: "realistic",length: "medium" },
+      { name: "Ni no Kuni II: Schicksal eines Königreichs", genre: "rpg",     mode: "single", era: "modern",    setting: "fantasy",    difficulty: "casual",   visual: "stylized", length: "medium" },
+      { name: "DOOM Eternal",                               genre: "shooter", mode: "single", era: "modern",    setting: "scifi",      difficulty: "hardcore", visual: "realistic",length: "medium" },
+      { name: "The Turing Test",                            genre: "puzzle",  mode: "single", era: "modern",    setting: "scifi",      difficulty: "casual",   visual: "retro",    length: "short" },
+      { name: "NBA 2K Playgrounds 2",                       genre: "sport",   mode: "multi",  era: "modern",    setting: "urban",      difficulty: "casual",   visual: "stylized", length: "medium" },
+      { name: "Forza Horizon 5",                            genre: "racing",  mode: "multi",  era: "modern",    setting: "urban",      difficulty: "casual",   visual: "realistic",length: "medium" },
+      { name: "Stardew Valley",                             genre: "simulation", mode: "single", era: "modern",  setting: "fantasy",    difficulty: "casual",   visual: "retro",    length: "long" },
+      { name: "Hollow Knight",                              genre: "indie",   mode: "single", era: "modern",    setting: "fantasy",    difficulty: "casual",   visual: "stylized", length: "long" },
+      { name: "Sekiro: Shadows Die Twice",                  genre: "action",  mode: "single", era: "modern",    setting: "historical",difficulty: "hardcore", visual: "realistic",length: "medium" },
+      { name: "Dragon Quest XI",                            genre: "rpg",     mode: "single", era: "modern",    setting: "fantasy",    difficulty: "casual",   visual: "stylized", length: "medium" },
+      { name: "Tom Clancy Rainbow Six Siege",               genre: "shooter", mode: "multi",  era: "modern",    setting: "urban",      difficulty: "hardcore", visual: "realistic",length: "medium" },
+      { name: "The Talos Principle",                        genre: "puzzle",  mode: "single", era: "modern",    setting: "scifi",      difficulty: "casual",   visual: "retro",    length: "short" },
+      { name: "Rocket League",                              genre: "sport",   mode: "multi",  era: "modern",    setting: "urban",      difficulty: "casual",   visual: "stylized", length: "medium" },
+      { name: "Need for Speed Heat",                        genre: "racing",  mode: "multi",  era: "modern",    setting: "urban",      difficulty: "casual",   visual: "realistic",length: "medium" },
+      { name: "Terraria",                                   genre: "simulation", mode: "single", era: "modern",  setting: "fantasy",    difficulty: "casual",   visual: "retro",    length: "long" },
+      { name: "Ori and the Will of the Wisps",              genre: "indie",   mode: "single", era: "modern",    setting: "fantasy",    difficulty: "casual",   visual: "stylized", length: "long" },
+      { name: "SleepinDogs",                                genre: "action",  mode: "single", era: "modern",    setting: "urban",      difficulty: "casual",   visual: "realistic",length: "medium" },
+      { name: "Tales of Arise",                             genre: "rpg",     mode: "single", era: "modern",    setting: "fantasy",    difficulty: "casual",   visual: "stylized", length: "medium" },
+      { name: "Destiny 2",                                  genre: "shooter", mode: "multi",  era: "modern",    setting: "scifi",      difficulty: "hardcore", visual: "realistic",length: "medium" },
+      { name: "The Swapper",                                genre: "puzzle",  mode: "single", era: "modern",    setting: "scifi",      difficulty: "casual",   visual: "retro",    length: "short" },
+      { name: "Street Power Football",                      genre: "sport",   mode: "multi",  era: "modern",    setting: "urban",      difficulty: "casual",   visual: "stylized", length: "medium" },
+      { name: "The crew",                                   genre: "racing",  mode: "multi",  era: "modern",    setting: "urban",      difficulty: "casual",   visual: "realistic",length: "medium" },
+      { name: "RimWorld",                                   genre: "simulation", mode: "single", era: "modern",  setting: "fantasy",    difficulty: "casual",   visual: "retro",    length: "long" },
+      { name: "Spiritfarer",                                genre: "indie",   mode: "single", era: "modern",    setting: "fantasy",    difficulty: "casual",   visual: "stylized", length: "long" },
+      { name: "Ghost of Tsushima",                          genre: "action",  mode: "single", era: "modern",    setting: "historical",difficulty: "hardcore", visual: "realistic",length: "medium" },
+      { name: "Octopath Traveler",                          genre: "rpg",     mode: "single", era: "modern",    setting: "fantasy",    difficulty: "casual",   visual: "stylized", length: "medium" },
+      { name: "Escape from Tarkov",                         genre: "shooter", mode: "multi",  era: "modern",    setting: "urban",      difficulty: "hardcore", visual: "realistic",length: "Lang" },
+      { name: "Pony Island",                                genre: "puzzle",  mode: "single", era: "modern",    setting: "scifi",      difficulty: "casual",   visual: "retro",    length: "short" },
+      { name: "Tony Hawk’s Pro Skater 1+2",                 genre: "sport",   mode: "multi",  era: "modern",    setting: "urban",      difficulty: "casual",   visual: "stylized", length: "medium" },
+      { name: "F1 25",                                      genre: "racing",  mode: "multi",  era: "modern",    setting: "urban",      difficulty: "casual",   visual: "realistic",length: "medium" },
+      { name: "Factorio",                                   genre: "simulation", mode: "single", era: "modern",  setting: "fantasy",    difficulty: "casual",   visual: "retro",    length: "long" },
+      { name: "Hades",                                      genre: "indie",   mode: "single", era: "modern",    setting: "fantasy",    difficulty: "casual",   visual: "stylized", length: "long" },
+      { name: "Mafia",                                      genre: "action",  mode: "single", era: "modern",    setting: "urban",      difficulty: "casual",   visual: "realistic",length: "medium" },
+      { name: "Bravely Default II",                         genre: "rpg",     mode: "single", era: "modern",    setting: "fantasy",    difficulty: "casual",   visual: "stylized", length: "medium" },
+      { name: "Titanfall 2",                                genre: "shooter", mode: "multi",  era: "modern",    setting: "scifi",      difficulty: "hardcore", visual: "realistic",length: "medium" },
+      { name: "Observation",                                genre: "puzzle",  mode: "single", era: "modern",    setting: "scifi",      difficulty: "casual",   visual: "retro",    length: "short" },
+      { name: "Roller Champions",                           genre: "sport",   mode: "multi",  era: "modern",    setting: "urban",      difficulty: "casual",   visual: "stylized", length: "medium" },
+      { name: "Hot Wheels Unleashed",                       genre: "racing",  mode: "multi",  era: "modern",    setting: "urban",      difficulty: "casual",   visual: "realistic",length: "medium" },
+      { name: "Slime Rancher 2",                            genre: "simulation", mode: "single", era: "modern",  setting: "fantasy",    difficulty: "casual",   visual: "retro",    length: "long" },
+      { name: "Gris",                                       genre: "indie",   mode: "single", era: "modern",    setting: "fantasy",    difficulty: "casual",   visual: "stylized", length: "long" },
+      { name: "Assassin’s Creed Valhalla",                  genre: "action",  mode: "single", era: "modern",    setting: "historical",difficulty: "hardcore", visual: "realistic",length: "medium" },
+      { name: "Final Fantasy 7/remake/rebirth",             genre: "rpg",     mode: "single", era: "modern",    setting: "fantasy",    difficulty: "casual",   visual: "stylized", length: "medium" },
+      { name: "Call of Duty: Warzone",                      genre: "shooter", mode: "multi",  era: "modern",    setting: "urban",      difficulty: "hardcore", visual: "realistic",length: "medium" },
+      { name: "portal 2",                                   genre: "puzzle",  mode: "single", era: "modern",    setting: "scifi",      difficulty: "casual",   visual: "retro",    length: "short" },
+      { name: "Mario Strikers: Battle League",              genre: "sport",   mode: "multi",  era: "modern",    setting: "urban",      difficulty: "casual",   visual: "stylized", length: "medium" },
+      { name: "Wreckfest",                                  genre: "racing",  mode: "multi",  era: "modern",    setting: "urban",      difficulty: "casual",   visual: "realistic",length: "medium" },
+      { name: "Need for Speed most wanted",                 genre: "simulation", mode: "single", era: "modern",  setting: "fantasy",    difficulty: "casual",   visual: "retro",    length: "long" },
+      { name: "Tunic",                                      genre: "indie",   mode: "single", era: "modern",    setting: "fantasy",    difficulty: "casual",   visual: "stylized", length: "long" },
+      { name: "Watch Dogs Legion",                          genre: "action",  mode: "single", era: "modern",    setting: "urban",      difficulty: "casual",   visual: "realistic",length: "medium" }
+    ];
+    
+    // Beim Absenden des Formulars:
+    // 1. Berechne den Matching-Score für jedes Spiel (alle abgefragten Attribute, OHNE "platform")
+    // 2. Zeige als Hauptempfehlung das Spiel mit dem höchsten Score an, wenn der Score mindestens 3 beträgt.
+    // 3. Für zusätzliche Empfehlungen: Wähle aus allen Spielen, die Genre und Setting exakt übereinstimmen und einen Score ≥ 3 haben (ohne die Hauptempfehlung).
+    document.getElementById("quizForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      
+      // Lese alle Benutzerwahlen aus
+      const userChoices = {
+        genre: document.querySelector('input[name="genre"]:checked').value,
+        mode: document.querySelector('input[name="mode"]:checked').value,
+        era: document.querySelector('input[name="era"]:checked').value,
+        setting: document.querySelector('input[name="setting"]:checked').value,
+        difficulty: document.querySelector('input[name="difficulty"]:checked').value,
+        visual: document.querySelector('input[name="visual"]:checked').value,
+        length: document.querySelector('input[name="length"]:checked').value
+      };
+      
+      // Berechne den Matching-Score (ohne "platform")
+      const scoredGames = games.map(game => {
+        let score = 0;
+        if (game.genre === userChoices.genre) score++;
+        if (game.mode === userChoices.mode) score++;
+        if (game.era === userChoices.era) score++;
+        if (game.setting === userChoices.setting) score++;
+        if (game.difficulty === userChoices.difficulty) score++;
+        if (game.visual === userChoices.visual) score++;
+        if (game.length === userChoices.length) score++;
+        return { game: game, score: score };
+      }).filter(item => item.score >= 3); // Nur Spiele mit mindestens 3 Übereinstimmungen
+      
+      // Falls keine Spiele die Mindestübereinstimmung erreichen:
+      if (scoredGames.length === 0) {
+        document.getElementById("resultArea").style.display = "block";
+        document.getElementById("mainGame").innerHTML = "<p>Keine Spiele gefunden, die mindestens 3 Attribute übereinstimmen.</p>";
+        document.getElementById("extraGames").innerHTML = "";
+        return;
+      }
+      
+      // Sortiere die Spiele nach absteigendem Score
+      scoredGames.sort((a, b) => b.score - a.score);
+      const mainGame = scoredGames[0].game;
+      
+      // Zusätzliche Empfehlungen:
+      // Filtere alle Spiele, die hinsichtlich Genre und Setting exakt mit der Auswahl übereinstimmen und einen Score ≥ 3 haben,
+      // entferne dabei die Hauptempfehlung und wähle bis zu 5 Spiele aus.
+      const extraRecommendations = scoredGames
+        .filter(item => item.game.genre === userChoices.genre && item.game.setting === userChoices.setting && item.game.name !== mainGame.name)
+        .slice(0, 5)
+        .map(item => item.game);
+      
+      // Anzeige der Hauptempfehlung (alle Attribute werden angezeigt)
+      document.getElementById("mainGame").innerHTML = `
+        <div class="game-card">
+          <h3>${mainGame.name}</h3>
+          <p><strong>Genre:</strong> ${mainGame.genre}</p>
+          <p><strong>Mode:</strong> ${mainGame.mode}</p>
+          <p><strong>Era:</strong> ${mainGame.era}</p>
+          <p><strong>Setting:</strong> ${mainGame.setting}</p>
+          <p><strong>Difficulty:</strong> ${mainGame.difficulty}</p>
+          <p><strong>Visual:</strong> ${mainGame.visual}</p>
+          <p><strong>Game Length:</strong> ${mainGame.length}</p>
+        </div>
+      `;
+      
+      // Anzeige der zusätzlichen Empfehlungen (alle Attribute)
+      let extraHTML = "";
+      if (extraRecommendations.length > 0) {
+        extraRecommendations.forEach(game => {
+          extraHTML += `
+            <div class="game-card">
+              <h3>${game.name}</h3>
+              <p><strong>Genre:</strong> ${game.genre}</p>
+              <p><strong>Mode:</strong> ${game.mode}</p>
+              <p><strong>Era:</strong> ${game.era}</p>
+              <p><strong>Setting:</strong> ${game.setting}</p>
+              <p><strong>Difficulty:</strong> ${game.difficulty}</p>
+              <p><strong>Visual:</strong> ${game.visual}</p>
+              <p><strong>Game Length:</strong> ${game.length}</p>
+            </div>
+          `;
+        });
+      } else {
+        extraHTML = "<p>Keine zusätzlichen Spiele gefunden.</p>";
+      }
+      document.getElementById("extraGames").innerHTML = extraHTML;
+      
+      // Blende den Ergebnisbereich ein
+      document.getElementById("resultArea").style.display = "block";
+    });
+  </script>
+</body>
+</html>
