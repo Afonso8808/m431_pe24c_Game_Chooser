@@ -22,7 +22,55 @@ Since my time for the project was quite limited, I created a resource plan from 
 * I divided my day into Two periods: afternoon, and evening, and marked out the periods when I could work on the assignment.
 * I calculated the number of **available hours** to make sure I could meet the deadlines.
   
-![Resource Plan][plan1]
+| Date       | Day       | Hours Worked |
+|------------|-----------|--------------|
+| 12.02.2025 | Monday    | 3            |
+| 13.02.2025 | Tuesday   | 2            |
+| 14.02.2025 | Wednesday | 2            |
+| 15.02.2025 | Thursday  | 3            |
+| 16.02.2025 | Friday    | 1            |
+| 17.02.2025 | Saturday  | 4            |
+| 18.02.2025 | Sunday    | 2            |
+| 19.02.2025 | Monday    | 3            |
+| 20.02.2025 | Tuesday   | 2            |
+| 21.02.2025 | Wednesday | 2            |
+| 22.02.2025 | Thursday  | 3            |
+| 23.02.2025 | Friday    | 2            |
+| 24.02.2025 | Saturday  | 4            |
+| 25.02.2025 | Sunday    | 3            |
+| 26.02.2025 | Monday    | 3            |
+| 27.02.2025 | Tuesday   | 2            |
+| 28.02.2025 | Wednesday | 2            |
+| 01.03.2025 | Thursday  | 3            |
+| 02.03.2025 | Friday    | 2            |
+| 03.03.2025 | Saturday  | 3            |
+| 04.03.2025 | Sunday    | 2            |
+| 05.03.2025 | Monday    | 3            |
+| 06.03.2025 | Tuesday   | 2            |
+| 07.03.2025 | Wednesday | 2            |
+| 08.03.2025 | Thursday  | 3            |
+| 09.03.2025 | Friday    | 1            |
+| 10.03.2025 | Saturday  | 3            |
+| 11.03.2025 | Sunday    | 2            |
+| 12.03.2025 | Monday    | 3            |
+| 13.03.2025 | Tuesday   | 2            |
+| 14.03.2025 | Wednesday | 2            |
+| 15.03.2025 | Thursday  | 3            |
+| 16.03.2025 | Friday    | 2            |
+| 17.03.2025 | Saturday  | 3            |
+| 18.03.2025 | Sunday    | 2            |
+| 19.03.2025 | Monday    | 3            |
+| 20.03.2025 | Tuesday   | 2            |
+| 21.03.2025 | Wednesday | 2            |
+| 22.03.2025 | Thursday  | 3            |
+| 23.03.2025 | Friday    | 2            |
+| 24.03.2025 | Saturday  | 3            |
+| 25.03.2025 | Sunday    | 2            |
+| 26.03.2025 | Monday    | 3            |
+| 27.03.2025 | Tuesday   | 2            |
+| 28.03.2025 | Wednesday | 2            |
+| 29.03.2025 | Thursday  | 3            |
+
 
 ---
 
