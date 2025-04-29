@@ -87,7 +87,7 @@
 ---
 
 ## References for Setup
-- [My Repository](https://github.com/Afonso8808/m431_pe24c_Game_Chooser/tree/main/resources/Download)
+- [My Repository so you can download it all for yourself](https://github.com/Afonso8808/m431_pe24c_Game_Chooser/tree/main/resources/Download)
 - [Node.js Official Website](https://nodejs.org/)
 
 ---
