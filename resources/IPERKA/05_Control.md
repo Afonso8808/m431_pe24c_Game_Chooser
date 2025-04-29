@@ -1,42 +1,81 @@
-Testing the Registration Process: (Pictures missing!)
+# Control
 
-    I opened the registration page (users.html) using a local server (via VSCode Live Server) to ensure that both pages share the same origin.
+## How I checked & controlled this assignment
 
-    I tested creating new user accounts with different usernames and verified that duplicate usernames were blocked.
+### High-Level Steps
+1. **Review the product requirements**
+2. **Design test cases**
+3. **Product testing**
+4. **Code review**
+5. **Review requirements and documentation**
+6. **Test summary**
 
-    I inspected localStorage using browser developer tools to confirm that user objects were stored correctly with their salt and hashed password (and not the plain-text password).
+---
 
-    Debugging output in the console (using console.log()) revealed the generated salt and hash values, which I compared manually against expected results.
+## Testing the Registration Process
 
-Testing the Login Process:
+- I opened the registration page (users.html) using a local server (via VSCode Live Server) to ensure that both pages share the same origin.
+- I tested creating new user accounts with different usernames and verified that duplicate usernames were blocked.
+- I inspected LocalStorage using the browser developer tools to confirm that user objects were stored correctly with their salt and hashed password (and not the plain-text password).
+- Debugging output in the console (using `console.log()`) revealed the generated Salt and hash values, which I compared manually against expected results.
 
-    On the login page (login.html), I attempted to log in using the credentials created during registration.
+---
 
-    The login function correctly retrieved the stored salt and computed a new hash using the entered password plus the stored salt and the constant pepper.
+## Testing the Login Process
 
-    I tested both correct and incorrect credentials to verify that the authentication logic worked as expected.
+- On the login page (login.html), I attempted to log in using the credentials created during registration.
+- The login function correctly retrieved the stored salt and computed a new hash using the entered password plus the stored salt and the constant pepper.
+- I tested both correct and incorrect credentials to verify that the authentication logic worked as expected.
+- I reviewed log outputs to ensure that the recomputed hash matched the stored hash, and when it did, the user was redirected to `results.html`.
 
-    I reviewed log outputs to ensure that the recomputed hash matched the stored hash, and when it did, the user was redirected to results.html.
+---
 
-Testing the Quiz and Game Recommendation:
+## Testing the Quiz and Game Recommendation
 
-    I tested the main quiz interface on index.html by selecting various combinations of game preferences.
+- I tested the main quiz interface on `index.html` by selecting various combinations of game preferences.
+- The JavaScript logic filtered through the hardcoded games array and stored the recommendation in localStorage.
+- I confirmed that the recommendation was correctly retrieved and displayed on `results.html`.
 
-    The JavaScript logic filtered through the hardcoded games array and stored the recommendation in localStorage.
+---
 
-    I confirmed that the recommendation was correctly retrieved and displayed on results.html.
+## Navigation and Consistency
 
-Navigation and Consistency:
+- I ensured that all pages are being served through the same local server (e.g., using VSCode Live Server), so that localStorage is shared consistently.
+- Every page transition (from registration to login, login to results, etc.) was verified to work smoothly.
 
-    I ensured that all pages are being served through the same local server (e.g., using VSCode Live Server), so that localStorage is shared consistently.
+---
 
-    Every page transition (registration to login, login to results, etc.) was verified to work smoothly.
+## Screenshots
 
-Screenshots:
 I captured screenshots at various stages of the testing process:
 
-    A screenshot from the registration page showing successful storage of user data.
+1. **Registration Page**: A screenshot showing successful storage of user data.
+   - ![Registration Screenshot][control01]
 
-    A screenshot of the login page with the developer console open, verifying that the computed hash matches the stored hash.
+2. **Login Page**: A screenshot of the login page with the developer console open, verifying that the computed hash matches the stored hash.
+   - ![Login Screenshot][control02]
 
-    A screenshot of the results page displaying the game recommendation based on the quiz responses.
+3. **Results Page**: A screenshot of the results page displaying the game recommendation based on the quiz responses.
+   - ![Results Screenshot][control03]
+
+---
+
+## Test Summary
+
+### Test Protocol
+- The tests were executed successfully with minor adjustments for error handling during login and registration.
+- The main issue found was related to duplicate usernames during registration and hash mismatch during login, both of which were addressed.
+
+![Test Protocol][protocol]
+
+---
+
+
+
+[control01]: ../02_resources/images/control-registration-screenshot.jpg
+[control02]: ../02_resources/images/control-login-screenshot.jpg
+[control03]: ../02_resources/images/control-results-screenshot.jpg
+[protocol]: ../02_resources/images/control-testprotocol-01.JPG
+
+[issue50]: https://github.com/Afonso8808/m431_pe24c_Game_Chooser/issues/50
+[issue54]: https://github.com/Afonso8808/m431_pe24c_Game_Chooser/issues/54
