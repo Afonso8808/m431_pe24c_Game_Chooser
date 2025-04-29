@@ -59,8 +59,4 @@ The matrix below helped me visualize the decision-making process for using local
 
 Based on the matrix, I chose **localStorage** because it was quick to implement and good enough for this small-scale project.
 
-![Decision Matrix][decide01]
-
 ---
-
-[decide01]: ../02_resources/images/decide-decisionmatrix.JPG
