@@ -12,7 +12,7 @@
 * I began by brainstorming the phases of the project to break down the tasks. I wanted to ensure the website would include all the necessary features, including user registration, login functionality, and personalized game recommendations.
 * During my planning, I thought of the core features first and then proceeded to structure the project step by step.
 
-![sketch1](../resources/images/analyze-plan-01.jpg)
+![sketch1](C:\m431_pe24c_Game_Chooser\resources\images\analyze-plan-01.jpg)
 
 ---
 
