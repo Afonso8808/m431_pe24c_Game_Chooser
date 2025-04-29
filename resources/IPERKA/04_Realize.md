@@ -89,7 +89,6 @@
 ## References for Setup
 - [GitHub Repository](https://github.com/Afonso8808/m431_pe24c_Game_Chooser/tree/main)
 - [Node.js Official Website](https://nodejs.org/)
-- [Draw.io](https://app.diagrams.net/)
 
 ---
 
