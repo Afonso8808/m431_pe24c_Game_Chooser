@@ -14,7 +14,7 @@
   * The first step was to create the repository directly on GitHub. I navigated to [GitHub](https://github.com) and created a new repository named `m431_pe24c_Game_Chooser`.
 
 * **Added files directly through the GitHub website**
-  * I created necessary files such as `index.html`, `main.js`, and `styles.css` directly on the GitHub website through the web interface.
+  * I created necessary files such as `index.html` and `main.js` directly on the GitHub website through the web interface.
   * For now, I kept the project simple and did not use a specific folder structure, so everything was initially stored at the root of the repository.
 
 * **Committing changes**
@@ -43,7 +43,7 @@
   * Spaces are represented by a Underscore (`_`).
   
 * **Directories**
-  * All directory names are in **lowercase**(Like i said with IPERKA being different) with spaces replaced by an underscore (`_`).
+  * All directory names are in **lowercase**(Like i said with IPERKA being a little bit different) with spaces replaced by an underscore (`_`).
   
 * **Variables**
   * All variables are in **uppercase** to clearly distinguish them as global constants.
@@ -52,9 +52,6 @@
 * **Environment Variables**
   * All environment variable names are in **uppercase**, prefixed with `M431_`, and spaces are replaced by an underscore (`_`).
 
-* **Database**
-  * Table names are in **UPPERCASE** and prefixed with `T_`.
-  * Column names are in **lowercase** to make them easy to identify and follow common conventions.
 
 ---
 
@@ -68,21 +65,6 @@
 
 * **Automated Tests**
   * I explored options to automate tests with simple JavaScript functions for validating input, like username and password checks during registration.
-
----
-
-## Git Folder Sorting
-* **Organizing Files and Folders**
-  * As I did not use folders for organizing my files, I kept all files at the root of the GitHub repository initially. This allowed me to focus on the functionality without worrying about folder structures. However, I considered that as the project grew, organizing files into directories could be helpful.
-
-* **GitHub Commit Process**
-  * After adding the files to the repository, I used GitHub’s built-in commit system to track the changes. I committed changes with descriptive messages to ensure version control was well-maintained.
-    - For example: 
-      ```bash
-      git add .
-      git commit -m "Set up initial files"
-      git push origin main
-      ```
 
 ---
 
