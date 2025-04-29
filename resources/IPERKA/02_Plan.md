@@ -12,7 +12,7 @@
 * I began by brainstorming the phases of the project to break down the tasks. I wanted to ensure the website would include all the necessary features, including user registration, login functionality, and personalized game recommendations.
 * During my planning, I thought of the core features first and then proceeded to structure the project step by step.
 
-![Analyze][sketch1]
+![sketch1](../resources/images/analyze-plan-01.jpg)
 
 ---
 
@@ -44,7 +44,6 @@ Since my time for the project was quite limited, I created a resource plan from 
 * I also defined the start and due dates for each task using the resource plan.
 * To make sure I stayed within the available time (30-40 hours), I calculated the total number of hours required and adjusted tasks accordingly.
 
-![Tasklist][plan3]
 
 ---
 
@@ -61,18 +60,14 @@ Since my time for the project was quite limited, I created a resource plan from 
 * To track my progress, I compared the Actual effort (time spent) against the Estimated effort (time planned).
 * I also checked the **milestones** to ensure I was on track and meeting my deadlines.
   
-![Progress Check][plan7]
+![Progress Check][plan6]
 
 ---
 
 
 [plan1]: ../resources/images/plan-resource-plan.jpg
 [plan2]: ../resources/images/plan-milestones.JPG
-[plan3]: ../resources/images/plan-tasklist-01.JPG
-[plan4]: ../resources/images/plan-tasklist-02.JPG
 [plan5]: ../resources/images/plan-tasklist-03.JPG
-[plan6]: ../resources/images/plan-gantt-01.JPG
-[plan7]: ../resources/images/plan-check-progress-01.JPG
+[plan6]: ../resources/images/plan-check-progress-01.JPG
 
-[sketch1]: ..resources/images/analyze-plan-01.jpeg
 
